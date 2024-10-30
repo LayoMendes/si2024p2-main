@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.sidebar-icons {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-link.active {
+    background-color: #efcfd4 !important; 
+    color: white !important; 
+    transform: scale(1.1); /* Aumenta o botão em 10% */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra suave */ 
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+
+
+.chart-wrapper {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.chart-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    margin-right: 50px;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.x-axis-label {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.y-axis-labels {
+    position: absolute;
+    left: -60px; /* Posiciona à esquerda */
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: right;
+    font-size: 12px;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.color-custo {
+    background-color: red;
+}
+
+.color-lucro {
+    background-color: green; /* Lucro agora é verde */
+}
+
+.color-bruto {
+    background-color: blue; /* Bruto agora é azul */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.grid-line {
+    stroke: #ccc; /* Cor cinza clara */
+    stroke-width: 1; /* Linha fina */
+}
+
+.content-box{
+    background-color: #f1f1f1 !important;
+}
+
+.new-content-section {
+    height: 300px; 
+    text-align: center;
+}
+
+
+.icone {
+    position: relative;
+    display: inline-block;
+}
+
+.static-image {
+   
+    height: auto;
+    display: block;
+}
+
+.hover-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 68px; /* Deve ser igual ao tamanho da imagem estática */
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.7s ease-out; /* Transição mais rápida no início */
+}
+
+.icone:hover .hover-gif {
+    opacity: 1; /* O GIF aparece quando o mouse está sobre o ícone */
+}
+
+.icone:hover .static-image {
+    opacity: 0; /* A imagem estática desaparece no hover */
+
+}
+
+
+.nav-item:hover {
+    background-color: rgb(194, 194, 194);
+    border-radius: 10%;
+    transform: scale(1.2); /* Aumenta o botão em 10% */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra suave */ 
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.rotatingText { 
+    margin-top: -12.5%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+  
+.rotatingText-content { 
+    position: relative;
+    width: 100%;
+}
+  
+.rotatingText-description { 
+    font-family: "Playwrite CU", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    margin: 0;
+}
+
+@media (min-width: 768px) { 
+    .rotatingText-description {
+      font-size: 18px;
+    }
+}
+  
+.rotatingText-adjective { 
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    left: 0;
+    margin-bottom: 0;
+    margin-top: 30px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: opacity 0.5s ease;
+}
+
+@media (min-width: 768px) { 
+    .rotatingText-adjective {
+        font-size: 70px;
+    }
+}
+
+.rotatingText-adjective:nth-of-type(1) { 
+    animation: rotate-text-up 1.5s 0.75s forwards; 
+}
+
+.rotatingText-adjective:nth-of-type(2) { 
+    animation: rotate-text-up 1.5s 2s forwards; 
+}
+
+.rotatingText-adjective:nth-of-type(3) { 
+    animation: fade-text-in 1.5s 3.25s forwards;
+}
+  
+@keyframes rotate-text-up { 
+    0% {
+        transform: translate3d(0, 80px, 0);
+        opacity: 0;
+    }
+    
+    20%, 80% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translate3d(0, -40px, 0);
+        opacity: 0;
+    }
+}
+  
+@keyframes fade-text-in { 
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 80px, 0);
+    }
+    
+    50%, 100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.boxx {
+    position: fixed; /* Fixa a caixa na tela */
+    bottom: 20%; /* Alinha na parte inferior com 20px de distância */
+    left: 44%; /* Centraliza horizontalmente */
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    border: 4px #623d3d;
+    background-color:#efcfd4;
+    box-shadow: 0px 10px 16px rgba(0, 0.8, 0.8, 0.4);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.boxx h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.boxx p {
+    font-size: 16px;
+    color: #000000;
+}
+
+
+
